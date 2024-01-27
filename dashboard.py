@@ -1,15 +1,23 @@
-pip install plotly
-pip install pandas
-pip install numpy
-
 import streamlit as st
-import plotly.express as px
-import pandas as pd
-import os
-import warnings
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import numpy as np
+import subprocess
+
+# Instalar paquetes desde requirements.txt
+try:
+    print(['pip', 'install', '-r', 'requirements.txt'])
+    subprocess.run(['pip', 'install', '-r', 'requirements.txt'], check=True)
+except Exception as e: 
+    print('installing requirements',e)
+
+try:
+    import plotly.express as px
+    import pandas as pd
+    import os
+    import warnings
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+    import numpy as np
+except Exception as e: 
+    print(e)
 
 
 warnings.filterwarnings('ignore')
