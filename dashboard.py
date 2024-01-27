@@ -33,7 +33,7 @@ if f1 is not None:
     st.write(filename)
     df=pd.read_csv(filename)
 else:
-    os.chdir(r'X:\Plaksha_term_4\Python for DS\Group Project\data_archive')
+    # os.chdir(r'X:\Plaksha_term_4\Python for DS\Group Project\data_archive')
     df = pd.read_csv("supply_data_final.csv", encoding='utf-8')
 
 col1, col2 = st.columns((2))
