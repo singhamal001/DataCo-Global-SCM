@@ -96,7 +96,7 @@ else:
     filtered_df = df[(df['Order Region'].isin(region)) & (df['Order Country'].isin(country)) & (df['Order State'].isin(state))]
 
 
-department_df = filtered_df.groupby(by=["Department Name"], as_index=False)['Order Item Total', 'Order Profit Per Order'].sum()
+department_df = filtered_df.groupby(by=["Department Name"], as_index=False)[['Order Item Total', 'Order Profit Per Order']].sum()
 ordered_departments = department_df.sort_values(by='Order Item Total', ascending=False)['Department Name']
 tot_sales = filtered_df['Order Item Total'].sum()
 tot_profit = filtered_df['Order Profit Per Order'].sum()
