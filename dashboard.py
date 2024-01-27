@@ -27,14 +27,14 @@ st.set_page_config(page_title='DataCo Supply Chain Data Analysis Dashboard', pag
 st.title(" :bar_chart: DataCo Supply Chain Data Analysis Dashboard")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
-f1 = st.file_uploader(":file_folder: Upload a file", type=(['csv']))
-if f1 is not None:
-    filename = f1.name
-    st.write(filename)
-    df=pd.read_csv(filename)
-else:
+# f1 = st.file_uploader(":file_folder: Upload a file", type=(['csv']))
+# if f1 is not None:
+#     filename = f1.name
+#     st.write(filename)
+#     df=pd.read_csv(filename)
+# else:
     # os.chdir(r'X:\Plaksha_term_4\Python for DS\Group Project\data_archive')
-    df = pd.read_csv("supply_data_final.csv", encoding='utf-8')
+df = pd.read_csv("supply_data_final.csv", encoding='utf-8')
 
 col1, col2 = st.columns((2))
 df['shipping date (DateOrders)'] = pd.to_datetime(df['shipping date (DateOrders)'], format="%d-%m-%Y %H:%M")
