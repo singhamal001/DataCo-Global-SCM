@@ -37,7 +37,7 @@ else:
     df = pd.read_csv("supply_data_final.csv", encoding='utf-8')
 
 col1, col2 = st.columns((2))
-df['shipping date (DateOrders)'] = pd.to_datetime(df['shipping date (DateOrders)'])
+df['shipping date (DateOrders)'] = pd.to_datetime(df['shipping date (DateOrders)'], format="%d-%m-%Y %H:%M")
 
 startDate = pd.to_datetime(df['shipping date (DateOrders)']).min()
 endDate = pd.to_datetime(df['shipping date (DateOrders)']).max()
@@ -662,8 +662,8 @@ fig.add_trace(
 st.plotly_chart(fig, use_container_width=True, height=300)
 ##################################################################################################################
 st.markdown("---")
-filtered_df['shipping date (DateOrders)'] = pd.to_datetime(filtered_df['shipping date (DateOrders)'])
-filtered_df['order date (DateOrders)'] = pd.to_datetime(filtered_df['order date (DateOrders)'])
+filtered_df['shipping date (DateOrders)'] = pd.to_datetime(filtered_df['shipping date (DateOrders)'], format="%d-%m-%Y %H:%M")
+filtered_df['order date (DateOrders)'] = pd.to_datetime(filtered_df['order date (DateOrders)'], format="%d-%m-%Y %H:%M")
 filtered_df['ordtoship time']=(filtered_df['shipping date (DateOrders)'] - filtered_df['order date (DateOrders)']).dt.total_seconds()/3600
 filtered_df['ordtoship time']=filtered_df['ordtoship time'].astype('int')
 
