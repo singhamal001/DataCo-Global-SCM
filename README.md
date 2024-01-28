@@ -32,7 +32,7 @@ of each city and make decisions based on the analysis received.
 
 ## 🔍 Conclusion
 
-[Link For the Complete Report](Report for Github.pdf)
+Link For the Complete Report: https://github.com/singhamal001/DataCo-Global-SCM/blob/main/Report%20for%20Github.pdf
 
 In conclusion, this report synthesizes key insights and actionable strategies derived from
 an extensive data analysis. A recurring theme is the challenge of late deliveries, notably
